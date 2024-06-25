@@ -1,7 +1,7 @@
 <mat-sidenav-container>
 
 
-      <mat-sidenav class="sidenav" #sidenav [fixedInViewport]="true" mode="push">
+      <mat-sidenav class="sidenav" #sidenav [opened]="!isSmallScreen" [fixedInViewport]="true" [mode]="sideNavMode">
 
       </mat-sidenav>
 
