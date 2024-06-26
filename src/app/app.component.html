@@ -1,16 +1,15 @@
 <mat-sidenav-container>
 
 
-      <mat-sidenav class="sidenav" #sidenav [opened]="!isSmallScreen" [fixedInViewport]="true" [mode]="sideNavMode">
+  <mat-sidenav class="sidenav" #sidenav [opened]="!isSmallScreen" [fixedInViewport]="true" [mode]="sideNavMode">
 
-      </mat-sidenav>
-
-
+  </mat-sidenav>
 
 
   <mat-sidenav-content>
-    <mat-toolbar>
-      <button mat-icon-button class="example-icon" (click)="sidenav.toggle()" aria-label="Example icon-button with menu icon">
+    <mat-toolbar color="primary" class="toolbar-menu">
+      <button mat-icon-button class="example-icon" (click)="sidenav.toggle()"
+        aria-label="Example icon-button with menu icon">
         <mat-icon>menu</mat-icon>
       </button>
       <span>My App</span>
@@ -22,6 +21,14 @@
         <mat-icon>share</mat-icon>
       </button>
     </mat-toolbar>
+
+    <mat-toolbar color="primary" class="toolbar-submenu">
+      <span>My app</span>
+    </mat-toolbar>
+    <h1 class="title">Teste</h1>
+    <h1 class="title">Teste</h1>
+    <h1 class="title">Teste</h1>
+    <h1 class="title">Teste</h1>
   </mat-sidenav-content>
 </mat-sidenav-container>
 
