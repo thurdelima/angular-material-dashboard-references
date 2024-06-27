@@ -7,12 +7,17 @@
 
 
   <mat-sidenav-content>
-    <mat-toolbar color="primary" class="toolbar-menu">
+    <mat-toolbar
+    color="primary"
+    class="toolbar-menu"
+    [class.mat-elevation-z8]="applyShadow"
+
+    >
       <button mat-icon-button class="example-icon" (click)="sidenav.toggle()"
         aria-label="Example icon-button with menu icon">
         <mat-icon>menu</mat-icon>
       </button>
-      <span>My App</span>
+      <span *ngIf="popText">My App</span>
       <span class="example-spacer"></span>
       <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
         <mat-icon>favorite</mat-icon>
@@ -23,7 +28,7 @@
     </mat-toolbar>
 
     <mat-toolbar color="primary" class="toolbar-submenu">
-      <span>My app</span>
+      <span *ngIf="!popText">My app</span>
     </mat-toolbar>
     <h1 class="title">Teste</h1>
     <h1 class="title">Teste</h1>

@@ -1,20 +1,43 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { BreakpointObserver} from '@angular/cdk/layout'
 import { MatSidenav } from '@angular/material/sidenav';
-import { pluck } from 'rxjs';
+import { fromEvent, map, pluck } from 'rxjs';
+
+export const SCROLL_CONTAINER = 'mat-sidenav-content';
+export const TEXT_LIMIT = 50;
+export const SHADOW_LIMIT = 100;
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'angular-material-simple-admin-reference';
 
   public isSmallScreen = false;
+  public popText = false;
+  public applyShadow = false;
 
   //@ViewChild(MatSidenav) sidenav!: MatSidenav;
   constructor(private breakPointObserver: BreakpointObserver) {}
+
+  ngOnInit(): void {
+    const content = document.getElementsByClassName(SCROLL_CONTAINER)[0];
+
+    fromEvent(content, 'scroll')
+    .pipe(
+      map(() => content.scrollTop)
+    )
+    .subscribe({
+      next: (value: number) =>  this.determineHeader(value)
+    })
+  }
+
+  determineHeader(scrollTop: number): void {
+    this.popText = scrollTop >= TEXT_LIMIT;
+    this.applyShadow = scrollTop >= SHADOW_LIMIT;
+  }
 
   ngAfterContentInit(): void {
     // this.breakPointObserver.observe(['(max-width: 800px)']).subscribe({
