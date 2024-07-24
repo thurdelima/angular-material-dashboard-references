@@ -5,7 +5,10 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatInputModule} from '@angular/material/input'
-import {MatListModule} from '@angular/material/list'
+import {MatListModule} from '@angular/material/list';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
+
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms'
 
@@ -19,7 +22,9 @@ import {FormsModule} from '@angular/forms'
     MatListModule,
     MatSidenavModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule
   ],
   declarations: [],
   providers: [
