@@ -1,7 +1,7 @@
 <h1>Progress bar and spinner</h1>
 
-<mat-progress-bar mode="buffer" [value]="" [bufferValue]="" color="primary"></mat-progress-bar>
+<mat-progress-bar mode="buffer" [value]="loadingPercent" [bufferValue]="" color="primary"></mat-progress-bar>
 <br>
-<mat-progress-bar mode="determinate" [value]="" [bufferValue]="" color="warn"></mat-progress-bar>
+<mat-progress-bar mode="determinate" [value]="loadingPercent" [bufferValue]="" color="warn"></mat-progress-bar>
 <br>
-<mat-progress-bar mode="determinate" [value]="" [bufferValue]="" color="accent"></mat-progress-bar>
+<mat-progress-bar mode="determinate" [value]="loadingPercent" [bufferValue]="" color="accent"></mat-progress-bar>

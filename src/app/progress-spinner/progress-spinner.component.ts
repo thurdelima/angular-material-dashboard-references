@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { interval, map, takeWhile } from 'rxjs';
 
 @Component({
   selector: 'app-progress-spinner',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProgressSpinnerComponent implements OnInit {
 
+  public loadingPercent: number = 50;
+
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+
+    this.loadingProgress(500)
+      .subscribe(i => this.loadingPercent = i);
+  }
+
+  loadingProgress(speed: number) {
+    return interval(speed)
+    .pipe(
+      map(i => i * 5),
+      takeWhile(i => i <= 70)
+    )
   }
 
 }
