@@ -10,6 +10,7 @@ import { concat, interval, map, take, takeWhile, tap } from 'rxjs';
 export class ProgressSpinnerComponent implements OnInit {
 
   public loadingPercent: number = 50;
+  public currentPlayback: number = 0;
   public queryMode: ProgressBarMode = 'query'; //esse é um modo de loading de indecisão, esperando pra carregar ainda.
   public queryValue: number = 0;
 
@@ -19,6 +20,9 @@ export class ProgressSpinnerComponent implements OnInit {
 
     this.loadingProgress(500, 70)
       .subscribe(i => this.loadingPercent = i);
+
+    this.loadingProgress(350, 100)
+      .subscribe(i => this.currentPlayback = i);
 
       //concat realiza a execução de mais de um observable
       concat(
