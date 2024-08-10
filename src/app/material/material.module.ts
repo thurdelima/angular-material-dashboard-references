@@ -7,8 +7,12 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatInputModule} from '@angular/material/input'
 import {MatListModule} from '@angular/material/list';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MAT_DATE_LOCALE, provideNativeDateAdapter} from '@angular/material/core';
 import {MatTabsModule} from '@angular/material/tabs';
+import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MatMomentDateModule, provideMomentDateAdapter } from '@angular/material-moment-adapter';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms'
@@ -26,12 +30,20 @@ import {FormsModule} from '@angular/forms'
     FormsModule,
     MatProgressBarModule,
     MatProgressSpinnerModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDatepickerModule,
+    MatMomentDateModule,
+    MatSnackBarModule
   ],
   declarations: [],
   providers: [
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline', floatLabel:'always'}
+    },
+    provideNativeDateAdapter(),
+    //provideMomentDateAdapter(undefined, {strict: true}),
+    {
+      provide: MAT_DATE_LOCALE, useValue: 'pt-br'
     }
   ]
 })
