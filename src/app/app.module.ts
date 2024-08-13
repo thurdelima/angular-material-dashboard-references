@@ -11,16 +11,18 @@ import { ProgressSpinnerComponent } from './progress-spinner/progress-spinner.co
 import { TabsComponent } from './tabs/tabs.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { SnackbarComponent } from './snackbar/snackbar.component';
+import { SnackbarMsnComponent } from './snackbar/snackbar-msn/snackbar-msn.component';
 
 @NgModule({
-  declarations: [						
+  declarations: [
     AppComponent,
       ButtonsIconsComponent,
       FormFieldInputComponent,
       ProgressSpinnerComponent,
       TabsComponent,
       DatepickerComponent,
-      SnackbarComponent
+      SnackbarComponent,
+      SnackbarMsnComponent
    ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { SnackbarMsnComponent } from './snackbar-msn/snackbar-msn.component';
 
 @Component({
   selector: 'app-snackbar',
@@ -12,9 +13,9 @@ export class SnackbarComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.snackBar.open('hello people', 'close', {
-      duration: 2000
-    })
+    // this.snackBar.open('hello people', 'close', {
+    //   duration: 2000
+    // })
   }
 
 
@@ -31,6 +32,18 @@ export class SnackbarComponent implements OnInit {
     snackBar.onAction().subscribe(_ => {
       console.log('alguma action')
     })
+  }
+
+  public openFromComp() {
+    this.snackBar.openFromComponent(SnackbarMsnComponent, {
+      data: 'Hello People 123 123',
+      duration: 2500,
+      horizontalPosition: 'end',
+      verticalPosition: 'top'
+    })
+
+
+
   }
 
 }
