@@ -38,8 +38,8 @@ export class SnackbarComponent implements OnInit {
     this.snackBar.openFromComponent(SnackbarMsnComponent, {
       data: 'Hello People 123 123',
       duration: 2500,
-      horizontalPosition: 'end',
-      verticalPosition: 'top'
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom'
     })
 
 
