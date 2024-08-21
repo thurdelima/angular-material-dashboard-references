@@ -26,6 +26,7 @@ import {
 
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   exports: [
@@ -43,6 +44,7 @@ import { FormsModule } from '@angular/forms';
     MatDatepickerModule,
     MatMomentDateModule,
     MatSnackBarModule,
+    MatDialogModule
   ],
   declarations: [],
   providers: [
