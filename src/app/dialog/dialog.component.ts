@@ -12,7 +12,13 @@ export class DialogComponent {
   constructor(private dialog: MatDialog) {}
 
   public openDialog() {
-    this.dialog.open(DialogModalComponent);
+    this.dialog.open(DialogModalComponent, {
+      enterAnimationDuration: '100ms',
+      exitAnimationDuration: '100ms',
+      data: {
+        animal: 'panda',
+      }
+    });
   }
 
 }
