@@ -22,7 +22,7 @@ export class DialogModalComponent implements OnInit {
   }
 
   public closeDialog() {
-    this.matDialogRef.close();
+    this.matDialogRef.close('return something');
   }
 
 }

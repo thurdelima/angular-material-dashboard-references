@@ -8,19 +8,19 @@
     <button mat-button mat-dialog-close>No</button>
     <button mat-button mat-dialog-close cdkFocusInitial>Ok</button>
   </mat-dialog-actions>
-  
-  
-  <mat-dialog-actions align="end"> 
+
+
+  <mat-dialog-actions align="end">
   <button mat-raised-button color="primary" (click)="closeDialog()">
     <mat-icon >close</mat-icon>
     Close
-  
+
   </button>
-  
-  <button mat-raised-button color="warn"  [mat-dialog-close]>
+
+  <button mat-raised-button color="warn"  [mat-dialog-close]="'return from mat-dialog close'">
     <mat-icon >close</mat-icon>
     Close
-  
+
   </button>
 </mat-dialog-actions>
 </div>

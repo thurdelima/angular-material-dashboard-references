@@ -8,17 +8,23 @@ import { DialogModalComponent } from './dialog-modal/dialog-modal.component';
   styleUrl: './dialog.component.scss'
 })
 export class DialogComponent {
+  public message: string = '';
 
   constructor(private dialog: MatDialog) {}
 
   public openDialog() {
-    this.dialog.open(DialogModalComponent, {
+    const dialogRef =  this.dialog.open(DialogModalComponent, {
       enterAnimationDuration: '100ms',
       exitAnimationDuration: '100ms',
       data: {
         animal: 'panda',
       }
     });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result)
+      this.message = result;
+    })
   }
 
 }
